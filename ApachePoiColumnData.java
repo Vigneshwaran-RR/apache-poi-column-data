@@ -38,7 +38,8 @@ public class ApachePoiColumnData {
 				List listData = new ArrayList<>();
 				for(Row row : firstSheet) {
 				 Cell cell = row.getCell(i);
-				 listData.add(cell.getStringCellValue());
+				 if(cell != null)
+				 	listData.add(cell.getStringCellValue());
 				}
 				// Insert values to the map column wise
 				data.put(i, listData);
